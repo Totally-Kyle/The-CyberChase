@@ -1,4 +1,4 @@
-# Here explain the data transformations, which the team will likely implement based on your EDA, Although you may have already agreed to several transformation.. 
+# Explain the data transformations, which the team will likely implement based on your EDA, Although you may have already agreed to several transformations
 
 Based on my exploratory data analysis (EDA) for February 7th and 8th, several key data transformations are being planned to enhance model clarity and performance. One significant change involves geotagging both the Source IP and Destination IP using the MaxMind GeoLite2 database, resulting in two new columns: Source Location and Destination Location. This transformation provides clearer, readable information that allows us to better understand where cybercrimes originate and where they are directed. With these new location columns in place, the original IP address fields will be dropped for simplicity. In addition, categorical fields such as Label, Protocol, and the newly created location fields will be one-hot encoded to prepare the dataset for machine learning algorithms that require numerical input.
 
