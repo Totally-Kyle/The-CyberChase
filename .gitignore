@@ -1,2 +1,6 @@
 # Ignore all CSV files
 *.csv 
+# Ignore GeoLite2-City directory
+GeoLite2-City_20250610/
+# Ignore GeoLite2-Country directory
+GeoLite2-Country_20250610/ 
