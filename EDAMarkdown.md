@@ -46,13 +46,6 @@
   - Errors in geolocation are handled gracefully.
 
 
-#### **8. Correlation Analysis**
-- **Correlation Heatmaps**:
-  - Various feature groups (e.g., flow stats, packet length metrics, inter-arrival times, TCP flags) are analyzed for correlations.
-  - Heatmaps visually highlight strong positive and negative correlations.
-- **Highly Correlated Features**:
-  - Features with correlations above **0.9** are identified and flagged for potential removal.
-
 #### **9. Feature Selection**
 - **Top Features by Variance**:
   - The top 30 features with the highest variance are selected for further analysis.
@@ -65,7 +58,7 @@
   - Generated for all numerical columns to understand distributions and detect outliers.
   - Focused on features like `Flow Duration`, `Total Fwd Packet`, and `Packet Length Mean`.
 
----
+
 
 ### **Key Insights**
 1. **Attack Trends**:
@@ -79,7 +72,11 @@
 5. **Feature Correlations**:
    - Strong correlations between certain features (e.g., `Flow Bytes/s` and `Flow Packets/s`) suggest redundancy, which can be addressed during feature selection.
 
----
+### **What's Next?**
+- **Correlation Heatmaps**:
+  - Various feature groups (e.g., flow stats, packet length metrics, inter-arrival times, TCP flags) analyzed for correlations.
+  - Heatmaps visually highlight strong positive and negative correlations.
+
 
 ### **Conclusion**
 This notebook provides a comprehensive analysis of honeypot data for February 12, 2023. It identifies key attack patterns, protocol usage, targeted ports, and correlations between features. The insights gained can be used to enhance network security measures, optimize intrusion detection systems, and prepare the data for machine learning models.
