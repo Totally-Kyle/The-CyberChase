@@ -27,23 +27,22 @@
 
 #### **5. Protocol Distribution**
 - The `Protocol` column is analyzed to understand network protocol usage.
-
-  - Protocol `17` (likely UDP) accounts for **95% of all traffic**.
-  - Protocol `6` (likely TCP) has only about **4,000 connections**.
+  - Protocol `17` accounts for **95% of all traffic**.
+  - Protocol `6` has only about **4,000 connections**.
 
 
 
 #### **6. Destination Port Analysis**
 - The `Dst Port` column is analyzed to identify the **Top 10 Targeted Ports**.
-  - Port `123` (likely NTP) is the most targeted, with over **70,000 attempts**.
+  - Port `123` is the most targeted, with over **70,000 attempts**.
   - Other ports have significantly fewer attempts.
 
 
 
 #### **7. Geolocation Analysis**
 - The `Src IP` column is used to determine the geographic locations of source IPs using the **GeoLite2 database**.
-  - Locations are added to the dataset in a new column (`Location`).
-  - Errors in geolocation are handled gracefully.
+  - New column to determine geogroahic locations (`Location`).
+
 
 
 #### **8. Feature Selection**
@@ -62,15 +61,14 @@
 
 ### **Key Insights**
 1. **Attack Trends**:
-   - `ddospot` attacks dominate the dataset, indicating a focus on Distributed Denial-of-Service (DDoS) activity.
+   - `ddospot` attacks dominate the dataset, indicating a focus on DDoS activity.
 2. **Protocol Usage**:
-   - UDP traffic (Protocol `17`) is overwhelmingly dominant, suggesting potential vulnerabilities in UDP-based services.
+   - Protocol `17` is overwhelmingly dominant, showing potential vulnerabilities.
 3. **Targeted Ports**:
-   - Port `123` (NTP) is heavily targeted, highlighting the need for securing time synchronization services.
+   - Port `123` is heavily targeted, highlighting the need for security.
 4. **Geolocation**:
    - Source IPs are mapped to geographic locations, providing insights into attack origins.
-5. **Feature Correlations**:
-   - Strong correlations between certain features (e.g., `Flow Bytes/s` and `Flow Packets/s`) suggest redundancy, which can be addressed during feature selection.
+
 
 ### **What's Next?**
 - **Correlation Heatmaps**:
