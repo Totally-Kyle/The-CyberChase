@@ -104,7 +104,7 @@ if response.status_code == 200:
 else:
     print(f"❌ Failed to download file. Status code: {response.status_code}")
 
-reader = geoip2.database.Reader('/Users/sa12/Documents/Repositories/The-CyberChase/DATA/GeoLite2-City.mmdb')
+reader = geoip2.database.Reader(mmdb_path)
 # Build location info
 locations = []
 
