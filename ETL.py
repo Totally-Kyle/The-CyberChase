@@ -2,6 +2,7 @@ import pandas as pd
 import os
 import zipfile
 from kaggle.api.kaggle_api_extended import KaggleApi
+import requests
 import shutil
 import geoip2.database
 
@@ -82,9 +83,28 @@ merged_df.to_csv(output_path, index=False)
 print(f"✅ Merged CSV saved to: {output_path}")
 
 # === Step 8: TRANSFORM ===
+# Download IP-Location database
+# Target download URL (git.io shortlink)
+url = 'https://git.io/GeoLite2-City.mmdb'
 
+# Destination directory and file path
+data_dir = '/Users/sa12/Documents/Repositories/The-CyberChase/DATA'
+os.makedirs(data_dir, exist_ok=True)  # Ensure DATA folder exists
 
-reader = geoip2.database.Reader('/Users/sa12/Documents/Repositories/The-CyberChase/CybercrimeData/GeoLite2-City.mmdb')
+mmdb_path = os.path.join(data_dir, 'GeoLite2-City.mmdb')
+
+# Download the file
+print("📥 Downloading GeoLite2-City.mmdb...")
+response = requests.get(url, stream=True)
+if response.status_code == 200:
+    with open(mmdb_path, 'wb') as f:
+        for chunk in response.iter_content(chunk_size=8192):
+            f.write(chunk)
+    print(f"✅ File saved to: {mmdb_path}")
+else:
+    print(f"❌ Failed to download file. Status code: {response.status_code}")
+
+reader = geoip2.database.Reader('/Users/sa12/Documents/Repositories/The-CyberChase/DATA/GeoLite2-City.mmdb')
 # Build location info
 locations = []
 
