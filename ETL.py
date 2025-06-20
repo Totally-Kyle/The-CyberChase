@@ -88,7 +88,7 @@ print(f"✅ Merged CSV saved to: {output_path}")
 url = 'https://git.io/GeoLite2-City.mmdb'
 
 # Destination directory and file path
-data_dir = '/Users/sa12/Documents/Repositories/The-CyberChase/DATA'
+data_dir = os.path.join(os.path.dirname(__file__), 'DATA')
 os.makedirs(data_dir, exist_ok=True)  # Ensure DATA folder exists
 
 mmdb_path = os.path.join(data_dir, 'GeoLite2-City.mmdb')
