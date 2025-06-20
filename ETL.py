@@ -51,7 +51,7 @@ import os
 import pandas as pd
 
 # Base directory for input and output
-base_dir = '/Users/sa12/Documents/Repositories/The-CyberChase/DATA'
+base_dir = os.path.join(os.path.dirname(__file__), 'DATA')
 
 # File names and corresponding days
 file_info = [
