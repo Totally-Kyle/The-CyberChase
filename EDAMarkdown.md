@@ -46,14 +46,14 @@
   - Errors in geolocation are handled gracefully.
 
 
-#### **9. Feature Selection**
+#### **8. Feature Selection**
 - **Top Features by Variance**:
   - The top 30 features with the highest variance are selected for further analysis.
 - **Selected Features**:
   - Includes metrics like `Flow Duration`, `Flow Bytes/s`, `Packet Length Mean`, `SYN Flag Count`, and `Active Mean`.
 
 
-#### **10. Univariate Analysis**
+#### **9. Univariate Analysis**
 - **Histograms and Boxplots**:
   - Generated for all numerical columns to understand distributions and detect outliers.
   - Focused on features like `Flow Duration`, `Total Fwd Packet`, and `Packet Length Mean`.
