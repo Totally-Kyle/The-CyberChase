@@ -1,0 +1,1 @@
+The Data Shows that most of the attacks are denial of service attacks. The spikes in Flow bytes and the high flow duration supports, meaning that a lot of packets (most likely requests) are being sent. Transforming the SRC IP and DST IP helped to see where the packets are coming from and where they are going
