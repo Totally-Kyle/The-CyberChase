@@ -5,6 +5,7 @@ from kaggle.api.kaggle_api_extended import KaggleApi
 import requests
 import shutil
 import geoip2.database
+from sqlalchemy import create_engine
 
 
 # === Step 1: Authenticate with Kaggle API ===
@@ -122,4 +123,4 @@ for ip in merged_df['Src IP']:
 
 # Add to DataFrame
 merged_df['Location'] = locations
-print(merged_df)
+
