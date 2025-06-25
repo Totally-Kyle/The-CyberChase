@@ -6,6 +6,11 @@ import requests
 import shutil
 import geoip2.database
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
+from urllib.parse import quote_plus
+
+
+load_dotenv()
 
 
 # === Step 1: Authenticate with Kaggle API ===
@@ -52,7 +57,7 @@ import os
 import pandas as pd
 
 # Base directory for input and output
-base_dir = '/Users/sa8/Desktop/The-CyberChase/CyberCrimeData'
+base_dir = os.path.join(os.path.dirname(__file__), 'DATA')
 
 # File names and corresponding days
 file_info = [
@@ -89,7 +94,7 @@ print(f"✅ Merged CSV saved to: {output_path}")
 url = 'https://git.io/GeoLite2-City.mmdb'
 
 # Destination directory and file path
-data_dir = '/Users/sa8/Desktop/The-CyberChase/CyberCrimeData'
+data_dir = os.path.join(os.path.dirname(__file__), 'DATA')
 os.makedirs(data_dir, exist_ok=True)  # Ensure DATA folder exists
 
 mmdb_path = os.path.join(data_dir, 'GeoLite2-City.mmdb')
@@ -105,7 +110,8 @@ if response.status_code == 200:
 else:
     print(f"❌ Failed to download file. Status code: {response.status_code}")
 
-reader = geoip2.database.Reader('/Users/sa8/Desktop/GeoLite2/GeoLite2-City.mmdb')
+reader = geoip2.database.Reader(mmdb_path)
+
 # Build location info
 locations = []
 
@@ -124,3 +130,30 @@ for ip in merged_df['Src IP']:
 # Add to DataFrame
 merged_df['Location'] = locations
 
+
+
+
+
+## Lets get our merged CSV over to postgres
+
+
+
+
+user = os.getenv("DB_USER")
+password = os.getenv("DB_PASS")
+host = os.getenv("DB_HOST")
+port = os.getenv("DB_PORT")
+dbname = os.getenv("DB_NAME")
+
+# Encode the password to handle special characters safely
+password_encoded = quote_plus(password)
+
+# Build the connection string using the encoded password
+conn_str = f"postgresql+psycopg2://{user}:{password_encoded}@{host}:{port}/{dbname}"
+
+# Create SQLAlchemy engine
+engine = create_engine(conn_str)
+
+# Push your DataFrame to PostgreSQL
+merged_df.to_sql('merged_CyberCrimeData', engine, index=False, if_exists='replace')
+print("✅ Data pushed to PostgreSQL successfully.")
