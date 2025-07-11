@@ -8,6 +8,8 @@ import geoip2.database
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 from urllib.parse import quote_plus
+import pycountry_convert as pc
+from tqdm import tqdm
 
 
 load_dotenv()
@@ -103,10 +105,19 @@ mmdb_path = os.path.join(data_dir, 'GeoLite2-City.mmdb')
 print("📥 Downloading GeoLite2-City.mmdb...")
 response = requests.get(url, stream=True)
 if response.status_code == 200:
-    with open(mmdb_path, 'wb') as f:
+    total_size = int(response.headers.get('content-length', 0))
+    with open(mmdb_path, 'wb') as f, tqdm(
+        desc="⬇️ Downloading GeoLite2-City.mmdb",
+        total=total_size,
+        unit='B',
+        unit_scale=True,
+        unit_divisor=1024,
+    ) as bar:
         for chunk in response.iter_content(chunk_size=8192):
             f.write(chunk)
+            bar.update(len(chunk))
     print(f"✅ File saved to: {mmdb_path}")
+
 else:
     print(f"❌ Failed to download file. Status code: {response.status_code}")
 
@@ -127,11 +138,26 @@ for ip in merged_df['Src IP']:
 
     locations.append(location_str)
 
+
 # Add to DataFrame
 merged_df['Location'] = locations
 
+def country_to_continent(country_name: str) -> str:
+    try:
+        alpha2 = pc.country_name_to_country_alpha2(country_name)
+        code = pc.country_alpha2_to_continent_code(alpha2)
+        name = pc.convert_continent_code_to_continent_name(code)
+        return name
+    except Exception:
+        return 'Unknown'
+
+merged_df['Continents'] = merged_df['Location'].apply(country_to_continent)
 
 
+def clean_error_locations(df: pd.DataFrame, col: str = 'Location') -> pd.DataFrame:
+    df[col] = df[col].apply(lambda x: 'N/A' if isinstance(x, str) and x.startswith('Error') else x)
+    return df
+clean_error_locations(merged_df)
 
 
 ## Lets get our merged CSV over to postgres
