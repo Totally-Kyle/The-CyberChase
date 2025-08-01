@@ -8,3 +8,9 @@ In this project, we dig into real honeypot data to better understand attacker be
 
 
 ## Modules/Libaries 
+* Pandas
+* Seaborn
+* Numpy
+* MatplotLib
+* Scikit-learn
+* geoip2.database
