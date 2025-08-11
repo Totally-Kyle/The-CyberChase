@@ -5,6 +5,12 @@ from kaggle.api.kaggle_api_extended import KaggleApi
 import requests
 import shutil
 import geoip2.database
+from sqlalchemy import create_engine
+from dotenv import load_dotenv
+from urllib.parse import quote_plus
+
+
+load_dotenv()
 
 
 # === Step 1: Authenticate with Kaggle API ===
@@ -104,7 +110,8 @@ if response.status_code == 200:
 else:
     print(f"❌ Failed to download file. Status code: {response.status_code}")
 
-reader = geoip2.database.Reader('/Users/sa24/Capstone/The-CyberChase/DATA/GeoLite2-City.mmdb')
+reader = geoip2.database.Reader(mmdb_path)
+
 # Build location info
 locations = []
 
@@ -122,4 +129,35 @@ for ip in merged_df['Src IP']:
 
 # Add to DataFrame
 merged_df['Location'] = locations
-print(merged_df)
+
+
+
+
+
+## Lets get our merged CSV over to postgres
+
+
+
+
+user = os.getenv("DB_USER")
+password = os.getenv("DB_PASS")
+host = os.getenv("DB_HOST")
+port = os.getenv("DB_PORT")
+dbname = os.getenv("DB_NAME")
+
+from urllib.parse import quote_plus
+
+password_encoded = quote_plus(str(password))
+
+# Encode the password to handle special characters safely
+#password_encoded = quote_plus(password)
+
+# Build the connection string using the encoded password
+conn_str = f"postgresql+psycopg2://{user}:{password_encoded}@{host}:{port}/{dbname}"
+
+# Create SQLAlchemy engine
+engine = create_engine(conn_str)
+
+# Push your DataFrame to PostgreSQL
+merged_df.to_sql('merged_CyberCrimeData', engine, index=False, if_exists='replace')
+print("✅ Data pushed to PostgreSQL successfully.")
