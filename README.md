@@ -13,3 +13,6 @@ In this project, we dig into real honeypot data to better understand attacker be
 * Numpy
 * MatplotLib
 * Scikit-learn
+* geoip2.database
+
+
