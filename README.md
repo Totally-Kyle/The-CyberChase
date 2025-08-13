@@ -19,18 +19,18 @@ In this project, we dig into real honeypot data to better understand attacker be
 
 The data was sourced from honeypot sensors deployed globally, capturing intrusion attempts including metadata such as:
 
-* Source IP & geolocation
+* Source IP 
 * Honeypot type targeted (e.g., ddospot, adbhoney, redispot)
 * Timestamp of attempt
 * Protocol and traffic metadata
 
 ## Objectives 
 
-* Identify top countries originating attacks
-* Determine the most common attack types
-* Analyze temporal attack patterns by day and hour
-* Use geolocation and visualization to map threat landscapes
-* Explore machine learning methods for pattern recognition
+* Identify top countries originating attacks.
+* Determine the most common attack types.
+* Analyze temporal attack patterns by day and hour.
+* Use geolocation and visualization to map threat landscapes.
+* Explore machine learning methods for pattern recognition.
 
 ## Methodology 
 1. Data Collection:
@@ -46,7 +46,7 @@ The data was sourced from honeypot sensors deployed globally, capturing intrusio
   * Created bar charts, treemaps, and time series visualizations to answer key questions.
 
 4. Machine Learning:
-  * Applied exploratory clustering to detect attack pattern similarities.
+  * Implemented a Random Forest model to predict potential future intrusions
 
 ## Key Findings 
 
@@ -64,10 +64,10 @@ Attack Types:
 * Temporal Patterns:
   * Peak days: Tuesday and Thursday.
   * Peak hours: 1 AM – 9 AM EST.
-![Placeholder for Hourly Attack Trends Chart]
+![screenshots](images/PopularDays.png)
 
 *Unexpected Findings:
-High attack volume originating from U.S. infrastructure suggests compromised domestic servers or proxy usage.
+A significant portion of the attacks appears to originate from U.S.-based systems; however, this does not necessarily indicate that the attackers are physically located in the U.S. It is possible that compromised servers or proxy networks are being used to obscure the true source of the intrusion.
 
 ## Future Work
 * Expand machine learning models for real-time attack prediction.
@@ -77,9 +77,9 @@ High attack volume originating from U.S. infrastructure suggests compromised dom
 [View the Project Jack Breacher Dashboard on Tableau](https://public.tableau.com/app/profile/garry.clark/viz/ProjectJackBreacher-CyberCrimelandscape2523-21223/PbV2)
 
 
-## Contributors
-Krystel Carrera Reyes
-Garry Clark
-Kyle Miller
-Elorna Pierre
-Jonathan Slater
+## Contributors 
+[Krystel Carrera Reyes](https://github.com/krystelcr)
+[Garry Clark](https://github.com/GClark89)
+[Kyle Miller](https://github.com/Totally-Kyle)
+[Elorna Pierre](https://github.com/Elorna-Pierre)
+[Jonathan Slater](https://github.com/theslater11)
