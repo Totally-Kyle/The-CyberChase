@@ -15,4 +15,35 @@ In this project, we dig into real honeypot data to better understand attacker be
 * Scikit-learn
 * geoip2.database
 
+## Dataset
 
+The data was sourced from honeypot sensors deployed globally, capturing intrusion attempts including metadata such as:
+
+* Source IP & geolocation
+* Honeypot type targeted (e.g., ddospot, adbhoney, redispot)
+* Timestamp of attempt
+* Protocol and traffic metadata
+
+## Objectives 
+
+* Identify top countries originating attacks
+* Determine the most common attack types
+* Analyze temporal attack patterns by day and hour
+* Use geolocation and visualization to map threat landscapes
+* Explore machine learning methods for pattern recognition
+
+## Methodology 
+1. Data Collection:
+  * Obtained from honeypot logs covering 7 consecutive days.
+  * Mapped IP addresses to geolocation using geoip2.database.
+
+2. Data Cleaning & Processing:
+  * Removed incomplete and duplicate entries.
+  * Converted timestamps to EST for temporal analysis.
+
+3. Analysis & Visualization:
+  * Used pandas, numpy, and matplotlib/seaborn for analysis.
+  * Created bar charts, treemaps, and time series visualizations to answer key questions.
+
+4. Machine Learning:
+  * Applied exploratory clustering to detect attack pattern similarities.
