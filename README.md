@@ -55,7 +55,7 @@ The data was sourced from honeypot sensors deployed globally, capturing intrusio
   * United States: 362,552 attacks.
 
 * Top 10 countries accounted for over 1.5 million attacks.
-  ![screenshots](images/Top 10 Countries by Instrustion Attempt.png)
+  ![screenshots](/Users/sa8/Desktop/The-CyberChase/images/Top 10 Countries by Instrustion Attempt.png)
 
 Attack Types:
   * Most frequent: ddospot, adbhoney, and redispot.
