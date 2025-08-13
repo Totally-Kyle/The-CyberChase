@@ -59,7 +59,7 @@ The data was sourced from honeypot sensors deployed globally, capturing intrusio
 
 Attack Types:
   * Most frequent: ddospot, adbhoney, and redispot.
-![Placeholder for Attack Type Treemap]
+![screenshots](images/HoneyPotActivity.png)
 
 * Temporal Patterns:
   * Peak days: Tuesday and Thursday.
@@ -71,8 +71,10 @@ High attack volume originating from U.S. infrastructure suggests compromised dom
 
 ## Future Work
 * Expand machine learning models for real-time attack prediction.
-* Integrate with SIEM platforms for live monitoring.
 * Broaden dataset to cover multiple months for seasonal pattern analysis.
+
+[View the Project Jack Breacher Dashboard on Tableau](https://public.tableau.com/app/profile/garry.clark/viz/ProjectJackBreacher-CyberCrimelandscape2523-21223/PbV2)
+
 
 ## Contributors
 Krystel Carrera Reyes
