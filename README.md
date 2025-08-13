@@ -78,8 +78,8 @@ A significant portion of the attacks appears to originate from U.S.-based system
 
 
 ## Contributors 
-[Krystel Carrera Reyes](https://github.com/krystelcr)
-[Garry Clark](https://github.com/GClark89)
-[Kyle Miller](https://github.com/Totally-Kyle)
-[Elorna Pierre](https://github.com/Elorna-Pierre)
-[Jonathan Slater](https://github.com/theslater11)
+* [Krystel Carrera Reyes](https://github.com/krystelcr)
+* [Garry Clark](https://github.com/GClark89)
+* [Kyle Miller](https://github.com/Totally-Kyle)
+* [Elorna Pierre](https://github.com/Elorna-Pierre)
+* [Jonathan Slater](https://github.com/theslater11)
