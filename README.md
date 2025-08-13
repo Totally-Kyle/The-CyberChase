@@ -47,3 +47,36 @@ The data was sourced from honeypot sensors deployed globally, capturing intrusio
 
 4. Machine Learning:
   * Applied exploratory clustering to detect attack pattern similarities.
+
+## Key Findings 
+
+* Concentration of Sources:
+  * Iran: 533,013 attacks.
+  * United States: 362,552 attacks.
+
+* Top 10 countries accounted for over 1.5 million attacks.
+  *![Placeholder for Top 10 Countries Bar Chart]
+
+Attack Types:
+  * Most frequent: ddospot, adbhoney, and redispot.
+![Placeholder for Attack Type Treemap]
+
+* Temporal Patterns:
+  * Peak days: Tuesday and Thursday.
+  * Peak hours: 1 AM – 9 AM EST.
+![Placeholder for Hourly Attack Trends Chart]
+
+*Unexpected Findings:
+High attack volume originating from U.S. infrastructure suggests compromised domestic servers or proxy usage.
+
+## Future Work
+* Expand machine learning models for real-time attack prediction.
+* Integrate with SIEM platforms for live monitoring.
+* Broaden dataset to cover multiple months for seasonal pattern analysis.
+
+## Contributors
+Krystel Carrera Reyes
+Garry Clark
+Kyle Miller
+Elorna Pierre
+Jonathan Slater
