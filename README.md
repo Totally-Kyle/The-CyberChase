@@ -59,15 +59,15 @@ The data was sourced from honeypot sensors deployed globally, capturing intrusio
 
 Attack Types:
   * Most frequent: ddospot, adbhoney, and redispot.
-![screenshots](images/HoneyPotActivity.png)
+![screenshots]()
 
-* Temporal Patterns:
+* Time-based trends:
   * Peak days: Tuesday and Thursday.
   * Peak hours: 1 AM – 9 AM EST.
 ![screenshots](images/PopularDays.png)
 
-*Unexpected Findings:
-A significant portion of the attacks appears to originate from U.S.-based systems; however, this does not necessarily indicate that the attackers are physically located in the U.S. It is possible that compromised servers or proxy networks are being used to obscure the true source of the intrusion.
+* Unexpected Findings:
+  * A significant portion of the attacks appears to originate from U.S.-based systems; however, this does not necessarily indicate that the attackers are physically located in the U.S. It is possible that compromised servers or proxy networks are being used to obscure the true source of the intrusion.
 
 ## Future Work
 * Expand machine learning models for real-time attack prediction.
