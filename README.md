@@ -19,10 +19,13 @@ In this project, we dig into real honeypot data to better understand attacker be
 
 The data was sourced from honeypot sensors deployed globally, capturing intrusion attempts including metadata such as:
 
-* Source IP 
 * Honeypot type targeted (e.g., ddospot, adbhoney, redispot)
 * Timestamp of attempt
 * Protocol and traffic metadata
+* Flow statistics: packet counts, bytes per flow, inter-arrival times
+* Packet & segment metrics: forward/backward packet lengths, segment sizes
+* TCP flags: counts of SYN, ACK, FIN, PSH, URG, and other flags
+* Original dataset contained 80+ columns, which were cleaned and narrowed down for analysis
 
 ## Objectives 
 
@@ -59,7 +62,7 @@ The data was sourced from honeypot sensors deployed globally, capturing intrusio
 
 Attack Types:
   * Most frequent: ddospot, adbhoney, and redispot.
-![screenshots]()
+![screenshots](images/IntensityofAttacks.png)
 
 * Time-based trends:
   * Peak days: Tuesday and Thursday.
@@ -73,8 +76,12 @@ Attack Types:
 * Expand machine learning models for real-time attack prediction.
 * Broaden dataset to cover multiple months for seasonal pattern analysis.
 
-## Live Demo
+## 
+
+## Live Demo & Full Report
 [View the Project Jack Breacher Dashboard on Tableau](https://public.tableau.com/app/profile/garry.clark/viz/ProjectJackBreacher-CyberCrimelandscape2523-21223/PbV2)
+[View Full Report](https://docs.google.com/document/d/1NSPd7Vx-isTjbKjx_LyrDfyAPef9YUOWxxJMGa-SM6Y/edit?tab=t.0)
+
 
 
 ## Contributors 
