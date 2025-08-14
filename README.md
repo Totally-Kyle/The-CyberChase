@@ -79,8 +79,8 @@ Attack Types:
 
 
 ## Live Demo & Full Report
-[View the Project Jack Breacher Dashboard on Tableau](https://public.tableau.com/app/profile/garry.clark/viz/ProjectJackBreacher-CyberCrimelandscape2523-21223/PbV2)
-[View Full Report](https://docs.google.com/document/d/1NSPd7Vx-isTjbKjx_LyrDfyAPef9YUOWxxJMGa-SM6Y/edit?tab=t.0)
+* [View the Project Jack Breacher Dashboard on Tableau](https://public.tableau.com/app/profile/garry.clark/viz/ProjectJackBreacher-CyberCrimelandscape2523-21223/PbV2)
+* [View Full Report](https://docs.google.com/document/d/1NSPd7Vx-isTjbKjx_LyrDfyAPef9YUOWxxJMGa-SM6Y/edit?tab=t.0)
 
 
 
