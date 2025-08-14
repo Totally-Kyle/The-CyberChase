@@ -61,7 +61,7 @@ The data was sourced from honeypot sensors deployed globally, capturing intrusio
 ![screenshots](images/Top10CountriesbyInstrustionAttempt.png)  
 
 Attack Types:
-  * Most frequent: ddospot, adbhoney, and redispot.
+* Most frequent: ddospot, adbhoney, and redispot.
 ![screenshots](images/IntensityofAttacks.png)
 
 * Time-based trends:
